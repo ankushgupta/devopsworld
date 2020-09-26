@@ -339,3 +339,138 @@ root@ip-172-31-51-31:~/devopsworld# history
   336  docker run -d -p 8080:80 httpd
   337  docker ps
   338  history
+
+
+
+
+ 341  docker ps
+  342  docker images
+  343  docker run -d -it ubuntu --name apache /bin/bash
+  344  docker run -d -it --name apache ubuntu /bin/bash
+  345  docker ps
+  346  docker exec -it 68ab28f89b3f /bin/bash
+  347  docker ps
+  348  docker commit 68ab28f89b3f ankushgupta0727/apache2test
+  349  docker images
+  350  docker run -d -it --name apacehe2test ankushgupta0727/apache2test
+  351  docker ps
+  352  docker exec -it c0aa3f98c228 /bin/bash
+  353  history
+  354  docker images
+  355  docker ps
+  356  docker login
+  357  docker push ankushgupta0727/apache2test:latest
+  358  docker commit 68ab28f89b3f apache2test1
+  359  docker images
+  360  docker push apache2test1
+  361  docker tag apache2test1 ankushgupta0727/apache2test1:v0.1
+  362  docker images
+  363  docker push ankushgupta0727/apache2test1:v0.1
+  364  docker tag apache2test1 ankushgupta0727/apache2test1:v0.2
+  365  docker push ankushgupta0727/apache2test1:v0.2
+  366  docker pull registry
+  367  docker images
+  368  docker run -d -p 5000:5000 --name privateregistry registry
+  369  docker ps
+  370  docker tag apache2test1 localhost:5000/apache2test1:v0.2
+  371  docker images
+  372  docker push localhost:5000/apache2test1
+  373  docker images
+  374  docker rmi -f ankushgupta0727/apache2test1  ankushgupta0727/apache2test1 apache2test1 5000/apache2test1  ankushgupta0727/apache2test
+  375  docker images
+  376  docker rmi localhost:5000/apache2test1:v0.2
+  377  docker images
+  378  docker rmi ankushgupta0727/apache2test1:v0.1 ankushgupta0727/apache2test1:v0.2
+  379  docker images
+  380  docker ps
+  381  docker pull localhost:5000/apache2test1:v0.2
+  382  docker images
+  383  docker run -d -it localhost:5000/apache2test1:v0.2 /bin/bash
+  384  docker ps
+  385  history
+  386  docker images
+  387  docker search ubuntu
+  388  docker pull ubuntu:xenial-20200916
+  389  docker images
+  390  docker run -d ubuntu
+  391  docker ps
+  392  docker ps -a
+  393  hist`
+  394  history
+  395  ls-l
+  396  mkdir dockerdemo
+  397  cd dockerdemo/
+  398  ls -l
+  399  vim Dockerfile
+  400  docker build -t apache2dockerfile .
+  401  vim Dockerfile
+  402  docker build -t apache2dockerfile .
+  403  vim Dockerfile
+  404  docker build -t apache2dockerfile .
+  405  vim Dockerfile
+  406  docker build -t apache2dockerfile .
+  407  vim Dockerfile
+  408  docker build -t apache2dockerfile .
+  409  vim Dockerfile
+  410  ls -l
+  411  echo "hello DevOps" > index.html
+  412  docker build -t apache2dockerfile .
+  413  docker images
+  414  docker run -d -p 80:80 apache2dockerfile
+  415  docker ps
+  416  docker logs ddd4c564021bc9d752d1ea01384e21a89e0690a31ff93ddfbf387f64d538f27d
+  417  docker ps\
+  418  docker ps
+  419  docker run -d -it apache2dockerfile /bin/bash
+  420  docker ps
+  421  docker exec -it a5ed1c5b9adc /bin/bash
+  422  vim Dockerfile
+  423  docker build -t apache2dockerfile .
+  424  docker run -d -p 80:80 apache2dockerfile
+  425  docker ps
+  426  docker logs d35eac64d899e8122d120c0eee141037d06b0c26adac7bed5579b657f1b344cb
+  427  docker build -t apache2dockerfile .
+  428  docker exec -it a5ed1c5b9adc /bin/bash
+  429  docker ps
+  430  vim Dockerfile
+  431  docker build -t apache2dockerfile .
+  432  docker run -d -p 80:80 apache2dockerfile
+  433  docker ps
+  434  docker logs 52f4e5470c1fe7082449785deb9ae66f5742b68d9131807d1540e6fa067a377f
+  435  vim Dockerfile
+  436  docker build -t apache2dockerfile .
+  437  docker run -d -p 80:80 apache2dockerfile
+  438  docker ps
+  439  docker logs 3f2b04db243106a97061ced25c04fb5d4fcfd871dc1b9b5f36a5fdf7190eae77
+  440  vim Dockerfile
+  441  docker build -t apache2dockerfile .
+  442  docker run -d -p 80:80 apache2dockerfile
+  443  docker logs
+  444  docker ps
+  445  docker run -d -it -p 81:80 apache2dockerfile /bin/bash
+  446  docker logs
+  447  docker ps
+  448  vim Dockerfile
+  449  docker build -t apache2dockerfileentrypoint .
+  450  docker run -d -it -p 82:80 apache2dockerfileentrypoint /bin/bash
+  451  docker ps
+  452  docker logs f776e36d5e7306fc920ddd6a3d7664a8f67eae12b8a9fea2baaefc512126af45
+  453  vim Dockerfile
+  454  docker build -t apache2dockerfileentrypoint .
+  455  docker run -d -it -p 82:80 apache2dockerfileentrypoint /bin/bash
+  456  vim Dockerfile
+  457  docker build -t apache2dockerfileentrypoint .
+  458  docker run -d -it -p 82:80 apache2dockerfileentrypoint /bin/bash
+  459  vim Dockerfile
+  460  vi entrypoint
+  461  docker exec -it a5ed1c5b9adc /bin/bash
+  462  vim Dockerfile
+  463  vim entrypoint
+  464  vim Dockerfile
+  465  docker build -t apache2dockerfileentrypoint .
+  466  docker run -d -it -p 82:80 apache2dockerfileentrypoint /bin/bash
+  467  docke rps
+  468  docker ps
+  469  docker logs d59ffb99e331b40e7997610e37c7bfc0b8114e1033cf7a2c7d914a9aa964550c
+  470  vim Dockerfile
+  471  history
