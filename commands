@@ -474,3 +474,160 @@ root@ip-172-31-51-31:~/devopsworld# history
   469  docker logs d59ffb99e331b40e7997610e37c7bfc0b8114e1033cf7a2c7d914a9aa964550c
   470  vim Dockerfile
   471  history
+
+
+  2  apt-get update
+    3  sudo apt-get remove docker docker-engine docker.io containerd runc
+    4  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    5  add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    6     $(lsb_release -cs) \
+    7     stable"
+    8  apt-get install docker-ce docker-ce-cli containerd.io
+    9  sudo docker run hello-world
+   10  vim Dockerfile
+   11  docker build -t apache .
+   12  docker run -it apache  /bin/bash
+   13  vim Dockerfile
+   14  docker build -t apache .
+   15  vim Dockerfile
+   16  docker build -t apache .
+   17  docker run -it apache  /bin/bash
+   18  vim Dockerfile
+   19  docker run -it apache  /bin/bash
+   20  docker build -t apache .
+   21  docker run -it apache  /bin/bash
+   22  docker run -d -it apache
+   23  docker ps
+   24  ls -l
+   25  vim Dockerfile
+   26  echo "hello world" > index.html
+   27  docker build -r apacheentrypoint .
+   28  docker build -t apacheentrypoint .
+   29  docker images
+   30  docker run -d --name apache apacheentrypoint
+   31  docker ps
+   32  docker run  -it  --name apache apacheentrypoint /bin/bash
+   33  docker run  -it  --name apache1 apacheentrypoint /bin/bash
+   34  vim Dockerfile
+   35  docker build -t apachecmd .
+   36  docker run -d --name apache apachecmd
+   37  docker run -d --name apache2 apachecmd
+   38  docker ps
+   39  docker run -it --name apache3 apachecmd /bin/bash
+   40  docker run -d --name apache2 -p 80:80 apachecmd
+   41  docker run -d --name apache4 -p 80:80 apachecmd
+   42  vim Dockerfile
+   43  docker build -t apachecompress .
+   44  docker images
+   45  docker run  -it  --name apache5 apacheentrypoint /bin/bash
+   46  docker run -it --name apache6 apachecmd /bin/bash
+   47  vim Dockerfile
+   48  docker volume
+   49  docker volume ls
+   50  cd /var/lib/docker/
+   51  ls- l
+   52  ls -l
+   53  cd plugins/
+   54  ls -l
+   55  cd ..
+   56  ls -l
+   57  cd volumes/
+   58  ls -l
+   59  cd ..
+   60  ls -l
+   61  docker volume create demovol
+   62  ls -l
+   63  cd volumes/
+   64  ls -l
+   65  cd demovol/
+   66  ls- l
+   67  ls -l
+   68  cd _data/
+   69  ls -l
+   70  cd ../..
+   71  docker run -d -it --mount source=demovol,destination=/tmp ubuntu /bin/bash
+   72  docker ps
+   73  docker exec -it 624dc3f572e1 /bin/bash
+   74  cd demovol/_data/
+   75  ls -l
+   76  docker ps
+   77  docker rm 624dc3f572e1
+   78  docker rm 624dc3f572e1 -f
+   79  docker ps
+   80  ls -l
+   81  cd
+   82  mkdir /data
+   83  ls -l
+   84  ls -l /
+   85  docker run -d -it -v /data:/tmp ubuntu /bin/bash
+   86  docker ps
+   87  docker exec -it 8ab199db87f0 /bin/bash
+   88  cd /data
+   89  ls -l
+   90  touch 1 2 3 4 5 6
+   91  docker exec -it 8ab199db87f0 /bin/bash
+   92  df -h
+   93  docker exec -it 8ab199db87f0 /bin/bash
+   94  cd
+   95  docker ps
+   96  docker run -d -it --name container1 ubuntu
+   97  docker ps
+   98  vi /etc/hosts
+   99  docker run -d -it --link container1 --name container2 ubuntu
+  100  docker ps
+  101  docker exec -it 3c22baf054fb /bin/bash
+  102  hostname
+  103  ufocnfig
+  104  ifocnfig
+  105  ifconfig
+  106  docker ps
+  107  curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  108  chmod +x /usr/local/bin/docker-compose
+  109  docker-compose version
+  110  vim docker-compose.yml
+  111  docker-compose up
+  112  docker ps
+  113  docker-compose stop
+  114  vim docker-compose.yml
+  115  docker-compose up
+  116  docker-compose  -d up
+  117  docker-compose up -d
+  118  docker ps
+  119  docker network ls
+  120  docker network inspect 7ce11d49134d
+  121  docker network create --driver bridge bridge1
+  122  docker network ls
+  123  docker network inspect 6974c421d5d5
+  124  docker run -it --network=bridge1 ubuntu /bin/bash
+  125  ls -
+  126  ldocker ps
+  127  docker ps
+  128  docker inspect 3ad9454b31b9
+  129  docker  --help
+  130  docker run --help
+  131  history
+  132  vim docker-compose.yml
+  133  history
+
+root@instance-2:~# cat Dockerfile
+FROM ubuntu:xenial-20200916
+
+RUN apt-get update &&  apt-get install -y apache2
+ADD index.html /var/www/html
+EXPOSE 80
+ENV Name DevOps
+
+#CMD  apachectl -D FOREGROUND
+ENTRYPOINT apachectl "-DFOREGOUND"
+
+root@instance-2:~# cat docker-compose.yml
+version: '3'
+services:
+  apachedemo:
+    image: httpd
+    ports:
+      - "82:80"
+  nginx:
+    image: nginx
+    ports:
+      - "81:80"
