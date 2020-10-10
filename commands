@@ -631,3 +631,46 @@ services:
     image: nginx
     ports:
       - "81:80"
+
+
+  173  cd /etc/ansible/
+  174  ls -l
+  175  vi ansible.cfg 
+  176  vi hosts 
+  177  vi ansible.cfg 
+  178  pwd
+  179  ssh-keygen 
+  180  cd .ssh
+  181  cd 
+  182  cd .ssh
+  183  ls -l
+  184  ssh instance-3
+  185  cat id_rsa.pub 
+  186  ssh instance-3
+  187  ansible instance-3 -m ping
+  188  ansible localhost -m ping
+  189  cd
+  190  cd //etc/ansible/
+  191  vi hosts 
+  192  ansible instance-3 -m ping
+  193  ansible instance-3 -m shell -a 'df -h'
+  194  cd
+  195  /etc/ansible/
+  196* cd /etc/ansibl
+  197  ansible instance-3 -m apt -a "name = telnet state = present"
+  198  ansible instance-3 -m package -a "name = telnet state = present"
+  199  ansible instance-3 -m package -a "name = telnet state = latest"
+  200  ansible instance-3 -m package -a "name=telnet"
+  201  ansible instance-3 -m setup
+  202  ansible localhost -m package -a "name=telnet"
+  203  ansible localhost connectio_type=local -m package -a "name=telnet"
+  204  ansible localhost connection_type=local -m package -a "name=telnet"
+  205  ansible localhost  --connection=local -m package -a "name=telnet"
+  206  ansible localhost connection_type=local -m package -a "name=telnet"
+  207  ansible localhost --connection=local -m package -a "name=telnet"
+  208  vim  demo1.yml
+  209  ansible-playbook demo1.yml --syntax-check
+  210  cat demo1.yml 
+  211  cat hosts
+  212  cat demo1.yml 
+  213  ansible-playbook demo1.yml 
