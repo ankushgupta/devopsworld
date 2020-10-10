@@ -674,3 +674,15 @@ services:
   211  cat hosts
   212  cat demo1.yml 
   213  ansible-playbook demo1.yml 
+  root@instance-2:/etc/ansible# cat demo1.yml 
+---
+- name: install nginx
+  hosts: all
+  tasks:
+  - name: install nginx package
+    package: 
+      name: nginx
+  - name:
+    service: 
+      name: nginx
+
